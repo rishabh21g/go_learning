@@ -46,7 +46,19 @@ func main() {
 	user1.Age = 22
 	user1.password = password
 
-	fmt.Printf("User struct defined: %+v\n", user1)
+	// fmt.Printf("User struct defined: %+v\n", user1)
+	var u User
+	u2 := u
+	u2.ID = "1" // makes a copy (value semantics) does not affect u
+	u2.Name = "Alice"
+	u2.Email = "abc@gmail.com"
+	// fmt.Printf("Empty User struct: %#v\n", u) // %#v will print the field names as well as the struct name
+	// fmt.Printf("Empty User struct copy: %#v\n", u2)
+
+	// difference in u and u2?
+	// on the basis of memory address
+	fmt.Printf("Memory address of u: %p\n", &u) // & gives the memory address of the variable %p is used to print the memory address %d is used to print the integer value %s is used to print the string value
+	fmt.Printf("Memory address of u2: %p\n", &u2)
 
 }
 
