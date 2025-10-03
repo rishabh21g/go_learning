@@ -44,4 +44,18 @@ func main() {
 
 	// output: "Message for channel 1" if with 1 second sleep in goroutine 1 and no sleep in goroutine 2
 	// output: "Message for channel 2" if with 1 second sleep in goroutine 2 and no sleep in goroutine 1
+
+	// without default keyword it will wait for any of the channel to receive data
+	// with default keyword it will not wait for any of the channel to receive data
+	// it will execute the default case if no other case is ready
+
+	// Infinite loop with select
+
+	// go func() {
+	// 	for {
+	// 		select {} // blocks forever
+	// 	}
+	// }()
+	// time.Sleep(2 * time.Second)
+	// fmt.Println("Main exits")
 }
