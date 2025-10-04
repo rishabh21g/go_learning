@@ -12,6 +12,9 @@ import (
 // At the same time, Wait can be used to block until all goroutines have finished.
 var wg sync.WaitGroup
 
+// wg := new(sync.WaitGroup) way to create wait group pointer
+// var wg *sync.WaitGroup = &sync.WaitGroup{} another way to create wait group pointer
+
 func Worker(id int) {
 	defer wg.Done()
 	fmt.Println("Worker", id, "started")
