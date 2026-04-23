@@ -14,7 +14,7 @@ import (
 
 func ctxShutdown() {
 
-	server := http.Server{
+	server := &http.Server{
 		Addr: ":3000",
 	}
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
